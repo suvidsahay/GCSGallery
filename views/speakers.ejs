@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html> 
+
+<head> 
+        <title>Home Page</title> 
+        
+        <style type="text/css" media="screen">
+                body{ 
+                padding:0% 3% 10% 3%; 
+                } 
+                h1{ 
+                color: #32a852; 
+                margin-top:30px; 
+                } 
+        
+                button{ 
+                cursor: pointer; 
+                border: 1px solid #555; 
+                text-align: center; 
+                padding: 5px; 
+                margin-left: 8px;  
+                } 
+                .dark{ 
+                background-color: #222; 
+                color: #e6e6e6; 
+                } 
+        </style> 
+</head> 
+
+<body> 
+        <h1>Speakers List</h1>
+        <ul>
+                <% data.forEach(function(element, index){ %>
+                        <li> <%= element.name %> </li>
+                <% }) %>
+        </ul>
+        
+        <h1>Get Speakers Detail</h1>
+        <label for="detail">Submit Speaker Name:</label>
+        <input type="text" id="detail" name="detail"><br><br>
+
+        <button onclick="getDetails()">Get Details</button>
+</body>
+<script src="/speaker.js"></script>
+
+</html> 
+

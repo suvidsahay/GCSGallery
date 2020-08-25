@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html> 
+
+<head> 
+        <title>Home Page</title> 
+        
+        <style type="text/css" media="screen">
+                body{ 
+                padding:0% 3% 10% 3%; 
+                } 
+                h1{ 
+                color: #32a852; 
+                margin-top:30px; 
+                } 
+        
+                button{ 
+                cursor: pointer; 
+                border: 1px solid #555; 
+                text-align: center; 
+                padding: 5px; 
+                margin-left: 8px;  
+                } 
+                .dark{ 
+                background-color: #222; 
+                color: #e6e6e6; 
+                } 
+        </style> 
+</head> 
+
+<body> 
+        <h1>Speaker Details</h1>
+        <h2><%= data[0].speaker.name %></h2>
+        Title : <%= data[0].speaker.title %><br>
+        Location : <%= data[0].speaker.location %>
+
+        <h1>Speaker's Videos</h1>
+        <% data.forEach(function(element, index){ %>
+            <h3> <%= element.title %> </h3>
+            URL : <a href=" <%= element.url %> "><%= element.url %></a><br>
+            claps : <%= element.claps %> <br>
+        <% }) %>
+</body>
+<script src="/speaker.js"></script>
+
+</html> 

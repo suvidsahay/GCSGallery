@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html> 
+
+<head> 
+        <title>Home Page</title> 
+        
+        <style type="text/css" media="screen">
+                body{ 
+                padding:0% 3% 10% 3%; 
+                } 
+                h1{ 
+                color: #32a852; 
+                margin-top:30px; 
+                } 
+        
+                button{ 
+                cursor: pointer; 
+                border: 1px solid #555; 
+                text-align: center; 
+                padding: 5px; 
+                margin-left: 8px;  
+                } 
+                .dark{ 
+                background-color: #222; 
+                color: #e6e6e6; 
+                } 
+        </style> 
+</head> 
+
+<body> 
+        <h1>Videos</h1>
+        <% data.forEach(function(element, index){ %>
+                <h1> <%= element.title %> </h1>
+                URL : <a href=" <%= element.url %> "><%= element.url %></a><br>
+                claps : <%= element.claps %> <br>
+                <button class="submit-id" id="<%= element.id %>">Upvote</button>
+        <% }) %>
+        <h1>Add a new field</h1>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="tags">Tags:</label>
+        <input type="text" name="tags[]">
+        <input type="text" name="tags[]">
+        <input type="text" name="tags[]"><br><br>
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url"><br><br>
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category"><br><br>
+        <label for="name">Speaker Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="s-title">Speaker Title:</label>
+        <input type="text" id="s-title" name="s-title"><br><br>
+        <label for="location">Speaker Lcation:</label>
+        <input type="text" id="location" name="location"><br><br>
+        <input type="button" class="submit-button" value="Submit"><br><br>
+
+        <button onclick="getSpeakerList()">Get Details</button><br><br>
+
+        <button onclick="getLeaderBoard()">Leaderboard</button><br>
+
+        <button onclick="myFunction()">Switch mode</button>  
+</body>
+<script src="/index.js"></script>
+
+</html> 
+
