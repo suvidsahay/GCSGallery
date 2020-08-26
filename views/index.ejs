@@ -30,7 +30,7 @@
 <body> 
         <h1>Videos</h1>
         <% data.forEach(function(element, index){ %>
-                <h1> <%= element.title %> </h1>
+                <h3> <%= element.title %> </h3>
                 URL : <a href=" <%= element.url %> "><%= element.url %></a><br>
                 claps : <%= element.claps %> <br>
                 <button class="submit-id" id="<%= element.id %>">Upvote</button>
@@ -54,7 +54,7 @@
         <input type="text" id="location" name="location"><br><br>
         <input type="button" class="submit-button" value="Submit"><br><br>
 
-        <button onclick="getSpeakerList()">Get Details</button><br><br>
+        <button onclick="getSpeakerList()">Get Speaker List</button><br><br>
 
         <button onclick="getLeaderBoard()">Leaderboard</button><br>
 

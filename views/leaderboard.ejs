@@ -28,14 +28,12 @@
 </head> 
 
 <body> 
-        <h1>Speakers List</h1>
-        <ul>
-                <% data.forEach(function(element, index){ %>
-                        <a href = "/speaker?q=<%=element.name%>"><li> <%= element.name %> </li></a>
-                <% }) %>
-        </ul>
-
+        <h1>Leaderboard</h1>
+        <% data.forEach(function(element, index){ %>
+            <%= element._id.name %> &nbsp; 
+            Total Claps : <%= element.totalClaps %> <br>
+        <% }) %>
 </body>
 
-</html> 
 
+</html> 

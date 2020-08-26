@@ -83,6 +83,7 @@ app.post('/video', function(req, res) {
       }
       else{
         data.id = result + 1
+        data.claps = 0;
         collection.insertOne(data, (err, results) => {
           if(err){
             res.send(err)
@@ -114,8 +115,9 @@ app.post('/upvote', function(req, res) {
   }
 })
 
-app.get('/speakers/:name', function(req, res) {
-  collection.find({"speaker.name" : req.params.name}).toArray(function(err, result) {
+app.get('/speaker', function(req, res) {
+  var name = req.query.q;
+  collection.find({"speaker.name" : {$regex : name + ".*"}}).toArray(function(err, result) {
     if(err) {
       console.log(err)
       res.send(err)
@@ -135,11 +137,9 @@ app.get('/leaderboard', function(req, res) {
       res.send(err)
     }
     else {
-      console.log(result)
-      res.send(result);
-      // res.render("speakerDetails", {
-      //   data : result
-      // })
+      res.render("leaderboard", {
+        data : result
+      })
     }
   })
 })
